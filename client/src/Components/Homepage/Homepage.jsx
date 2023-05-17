@@ -42,19 +42,19 @@ const Homepage = () => {
   }
   return (
     <>
-    <div className="homepage">
-      <div className="card">
-        <div className="card-content">
+    <div className="homepage-sell">
+      <div className="card-sell">
+        <div className="card-content-sell">
           <h2>Find Your Right Car</h2>
-          <div className="tab-container">
+          <div className="tab-container-sell">
             <button
-              className={`tab-button ${activeTab === 'newCar' ? 'active' : ''}`}
+              className={`tab-button-sell ${activeTab === 'newCar' ? 'active' : ''}`}
               onClick={() => handleTabChange('newCar')}
             >
               New Car
             </button>
             <button
-              className={`tab-button ${activeTab === 'usedCar' ? 'active' : ''}`}
+              className={`tab-button-sell ${activeTab === 'usedCar' ? 'active' : ''}`}
               onClick={() => handleTabChange('usedCar')}
             >
               Used Car
@@ -65,14 +65,14 @@ const Homepage = () => {
             placeholder="Enter keyword"
             value={searchKeyword}
             onChange={handleSearchKeywordChange}
-            className="form-input"
+            className="form-input-sell"
           />
           <input
             type="text"
             placeholder="Select"
             value={searchKeyword}
             onChange={handleSearchKeywordChange}
-            className="form-input"
+            className="form-input-sell"
           />
           <br />
           <br />
@@ -83,21 +83,21 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="card">
-        <div className="card-content">
+      <div className="card-sell">
+        <div className="card-content-sell">
           <h2>Enter Your Car Number</h2>
           <input
             type="text"
             placeholder="Enter car number"
             value={carNumber}
             onChange={handleCarNumberChange}
-            className="form-input"
+            className="form-input-sell"
           />
-          <button onClick={handleGetCarPrice} className="search-button">
+          <button onClick={handleGetCarPrice} className="search-button-sell">
             Get Car Price
           </button>
           {!carPriceAvailable && (
-              <p className="unavailable-message">
+              <p className="unavailable-message-sell">
                 Sorry, this car's details are not available.
               </p>
           )}
@@ -139,7 +139,7 @@ const Homepage = () => {
 />
 
 
-<button onClick={handleGetAllCars} className="search-button">
+<button onClick={handleGetAllCars} className="search-button-sell">
             View All Cars
           </button>
          

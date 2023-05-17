@@ -95,37 +95,7 @@ app.post('/signin', async (req, res) => {
 });
 
 //=====================================Car===============================================
-const carSchema = new mongoose.Schema({
-  budget: Number,
-  year: Number,
-  bodytype: String,
-  fueltype: String,
-  under: String,
-  from: String,
-  mileage: Number,
-  brand: String,
-  location: String,
-  owner: String,
-  price: Number,
-  model: String,
-  carImage: String,
-});
 
-// Create a car model
-const Car = mongoose.model('Car', carSchema);
-
-// Create a new car with image upload
-app.post('/cars', upload.array('carImage',5), async (req, res) => {
-  try {
-    const { budget, year, bodytype, fueltype, under, from, mileage, brand, location, owner, price, model } = req.body;
-    const carImages = req.files.map(file => file.location);
-    const car = new Car({ budget, year, bodytype, fueltype, under, from, mileage, brand, location, owner, price, model, carImages });
-    const savedCar = await car.save();
-    res.status(201).json(savedCar);
-  } catch (error) {
-    res.status(500).json({ error: 'Error saving car' });
-  }
-});
 
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

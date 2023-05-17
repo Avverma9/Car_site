@@ -48,7 +48,7 @@ const CarAuction = () => {
       </div>
       <div className="car-list">
         {filteredCars.map((car) => (
-          <div key={""} className="car-card">
+          <div className="car-card">
             <img src={car.images} alt={`${car.brand} ${car.model}`} />
             <div className="car-details">
               <h2>{`${car.brand} ${car.model}`}</h2>

@@ -1,5 +1,5 @@
 /* Styling for the homepage container */
-.homepage {
+.homepage-sell {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,7 @@
   }
   
   /* Styling for the card */
-  .card {
+  .card-sell {
     width: 380px;
     margin: 150px;
     border: none;
@@ -18,20 +18,20 @@
     border-radius: 4px;
   }
   
-  .card-content {
+  .card-content-sell {
     padding: 20px;
 }
 
-.card h2 {
+.card-sell h2 {
 margin-top: 0;
 }
 
 /* Styling for the tabs */
-.tab-container {
+.tab-container-sell {
 margin-bottom: 20px;
 }
 
-.tab-button {
+.tab-button-sell {
 background-color: #f2f2f2;
 color: #333;
 padding: 10px 20px;
@@ -40,18 +40,18 @@ cursor: pointer;
 margin-right: 10px;
 }
 
-.tab-button:hover {
+.tab-button-sell:hover {
 background-color: #000000;
 color: whitesmoke;
 }
 
-.tab-button.active {
+.tab-button-sell.active {
 background-color: #000000;
 color: #ffffff;
 }
 
 /* Styling for the form inputs and buttons */
-.form-input {
+.form-input-sell {
 margin-bottom: 10px;
 width: 90%;
 padding: 10px;
@@ -60,7 +60,7 @@ border-radius: 4px;
 border: 1px solid #ccc;
 }
 
-.search-button {
+.search-button-sell {
 background-color: #3f78e2;
 color: #fff;
 border: none;
@@ -70,42 +70,42 @@ cursor: pointer;
 border-radius: 4px;
 }
 
-.search-button:hover {
+.search-button-sell:hover {
 background-color: #45a049;
 }
   /* Styling for the homepage heading */
-.homepage h1 {
+.homepage-sell h1 {
     font-size: 28px;
     color: #fff;
     text-align: center;
     }
     
     /* Styling for the card title */
-    .card h2 {
+    .card-sell h2 {
     margin-top: 0;
     font-size: 24px;
     color: #333;
     }
     
     /* Styling for the card content paragraphs */
-    .card p {
+    .card-sell p {
     margin-bottom: 10px;
     }
     
     /* Styling for the tabs content */
-    .tab-content {
+    .tab-content-sell {
     display: none;
     padding: 20px;
     background-color: #fff;
     }
     
     /* Styling for the active tab content */
-    .tab-content.active {
+    .tab-content-sell.active {
     display: block;
     }
     
     /* Styling for the form labels */
-    .form-label {
+    .form-label-sell {
     display: block;
     font-size: 16px;
     color: #333;
@@ -113,7 +113,7 @@ background-color: #45a049;
     }
     
     /* Styling for the form submit button */
-    .form-submit {
+    .form-submit-sell {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -123,19 +123,19 @@ background-color: #45a049;
     border-radius: 4px;
     }
     
-    .form-submit:hover {
+    .form-submit-sell:hover {
     background-color: #0056b3;
     }
     
     /* Styling for error messages */
-    .error-message {
+    .error-message-sell {
     color: #ff0000;
     font-size: 14px;
     margin-top: 5px;
     }
     
     /* Styling for success messages */
-    .success-message {
+    .success-message-sell {
     color: #00cc00;
     font-size: 14px;
     margin-top: 5px;

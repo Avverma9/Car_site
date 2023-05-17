@@ -9,6 +9,7 @@ import Footer from './Components/Footer/Footer';
 import CarHomepage from './Components/CarHomepage/CarHomepage.jsx'
 import Buypage from './Components/BuyPage/BuyPage';
 import Auction from './Components/Auction/Auction';
+import CarCatalog from './Components/homeCarPage/CarCatalog';
 
 
 function App() {
@@ -17,10 +18,12 @@ function App() {
     <Header/>
   
     <Homepage/>
+
     <Carpage/>
     <Footer/>
     <Routes>
     <Route path='/' Component={CarHomepage}/>
+    <Route path='/h'  Component={CarCatalog}/>
       <Route path='/signin' Component={SignIn}/>
       <Route path='/signup' Component={SignUp}/>
       <Route path='/buy' Component={Buypage}/>
