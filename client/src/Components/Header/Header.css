@@ -1,0 +1,57 @@
+ header {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+.Nav1 {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .Nav1 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Nav1 ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .Nav1 ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .Nav2 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Nav2 ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .Nav2 ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+  }
+  
+  .Nav2 ul li a:hover {
+    color: #000;
+    background-color: #e6e6e6;
+  } 
+  /* Header.css */
+
+
+  
+  .Nav2 ul li1 a img {
+    width: 130px; 
+    height: 45px; 
+    margin-right: 750px; 
+  }
+  

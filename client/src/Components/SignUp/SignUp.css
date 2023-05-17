@@ -1,0 +1,85 @@
+.card-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logo-wrapper-signup {
+  width: 300px;
+  margin-right: 20px;
+}
+
+.logo-signup {
+  width: 100%;
+  height: auto;
+}
+
+.form-wrapper-signup {
+  flex-grow: 1;
+}
+
+.form-signup {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.input-field-signup[type="text"],
+.input-field-signup[type="email"],
+.input-field-signup[type="password"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.input-field-signup[type="file"] {
+  display: none;
+}
+
+.profile-picture-wrapper-signup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture-signup {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.upload-button-signup {
+  margin-left: 10px;
+  padding: 6px 12px;
+  background-color: #e0e0e0;
+  color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
