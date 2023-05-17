@@ -287,6 +287,34 @@ const CarHomepage = () => {
       <div className="viewAllsss">
         <a href="#">View All Latest Cars</a>
       </div>
+      <div className="sixth-car">
+<img src="https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/1684348818724-Untitled.png" alt="" />
+      <button className="view-all-cars-button2">
+        View All Cars
+      </button>
+      </div>
+      <div className="seventh-car">
+        <img src="https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/1684355935525-Untitled.png" alt="" />
+        
+      </div>
+      <div className="seventh-car">
+        <img src="https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/1684355821934-Untitled.png" alt="" />
+       
+      </div>
+      <div className="seventh-car">
+        <img src="https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/1684356186473-Untitled.png" alt="" />
+       
+      </div>
+      <div className="eight-car">
+        <img src="https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/1684356312478-Untitled.png" alt="" />
+       
+      </div>
+      <div className='second-image'>
+        <img src="https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/1684300856239-Untitled.jpg" alt="" />
+        </div>
+        <div className='third-image'>
+        <img src="https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/1684301731905-Untitled.jpg" alt="" />
+        </div>
     </>
     
   );

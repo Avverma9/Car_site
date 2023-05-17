@@ -24,7 +24,8 @@ const Header = () => {
           <li><a href="/sell">Sell</a></li>
           <li><a href="/auction">Auction</a></li>
           <li><a href="/signin">Sign In</a></li>
-          <li><a href="/signup"><VscAccount/> Register</a></li>
+          <li><a href="/signup">Register</a></li>
+          <li><a href="/profile"><VscAccount/>Profile</a></li>
         </ul>
       </nav>
     </header>
