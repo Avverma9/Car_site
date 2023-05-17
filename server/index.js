@@ -7,7 +7,6 @@ const { Server } = require('socket.io');
 const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 const multerS3 = require('multer-s3');
 const multer = require('multer');
-const jwt = require('jsonwebtoken');
 const app = express();
 const server = createServer(app);
 const io = new Server(server);
@@ -18,7 +17,6 @@ const AWS_BUCKET_NAME = 'classroom-training-bucket';
 const AWS_ACCESS_KEY_ID = 'AKIAY3L35MCRZNIRGT6N';
 const AWS_SECRET_ACCESS_KEY = '9f+YFBVcSjZWM6DG9R4TUN8k8TGe4X+lXmO4jPiU';
 const AWS_REGION = 'ap-south-1'; // Update this to the appropriate region for your S3 bucket
-const JWT_SECRET = 'YOUR_JWT_SECRET_KEY';
 const s3 = new S3Client({
   region: AWS_REGION,
   credentials: {
@@ -69,8 +67,7 @@ app.post('/signup', upload, async (req, res) => {
   const user = new signUp({ name,address, email, mobile, password,images});
   await user.save();
   io.emit('recordAdded', user);
-  const token = jwt.sign({ userId: user._id }, JWT_SECRET);
-  res.json({ token });
+ 
  
 });
 
@@ -88,13 +85,8 @@ app.post('/signin', async (req, res) => {
 
     // Check if user exists and compare passwords
     if (user && user.password === password) {
-      const token = jwt.sign({ userId: user._id }, JWT_SECRET);
+      res.status(200).json({message : "Sign-In Success", id: user._id})
 
-      // Return the token in the response
-      res.json({ token });
-
-      // Store the token in localStorage
-      localStorage.setItem('token', token);
     } else {
       res.status(401).json({ message: 'Invalid email or password' });
     }
@@ -103,32 +95,10 @@ app.post('/signin', async (req, res) => {
   }
 });
 
-
-
-
-const verifyToken = (req, res, next) => {
-  const token = req.headers.authorization;
-
-  if (!token) {
-    return res.status(401).json({ message: 'No token provided' });
-  }
-
-  // Extract the token value from the 'Authorization' header
-  const tokenValue = token.split(' ')[1];
-
-  jwt.verify(tokenValue, JWT_SECRET, (err, decoded) => {
-    if (err) {
-      return res.status(403).json({ message: 'Failed to authenticate token' });
-    }
-
-    req.userId = decoded.userId;
-    next();
-  });
-};
-
-app.get('/profile', verifyToken, async (req, res) => {
+app.get('/profile/:id', async (req, res) => {
   try {
-    const user = await signUp.findById(req.userId);
+    const data=req.params.id
+    const user = await signUp.findById(data);
     res.json(user);
   } catch (error) {
     res.status(500).json({ message: 'Internal server error' });
