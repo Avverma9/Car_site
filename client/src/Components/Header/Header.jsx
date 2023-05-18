@@ -2,7 +2,7 @@
 import React from 'react';
 import './Header.css';
 import {VscAccount} from 'react-icons/vsc'
-
+import {AiOutlineShoppingCart} from 'react-icons/ai'
 
 const Header = () => {
   return (
@@ -28,6 +28,7 @@ const Header = () => {
           <li><a href="/signin">Sign In</a></li>
           <li><a href="/signup">Register</a></li>
           <li><a href="/profile"><VscAccount/>Profile</a></li>
+          <li><a href="/cart"><AiOutlineShoppingCart/>Cart</a></li>
         </ul>
       </nav>
     </header>

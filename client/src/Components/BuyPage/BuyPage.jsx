@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from "react";
 import "./BuyPage.css";
 import { BsSearch } from "react-icons/bs";
@@ -8,7 +9,7 @@ const Buypage = () => {
 
   const fetchCars = async () => {
     try {
-      const response = await fetch("http://localhost:5000/getall");
+      const response = await fetch("https://carfullstack.onrender.com");
       const data = await response.json();
       setCars(data);
     } catch (error) {
@@ -23,7 +24,7 @@ const Buypage = () => {
   const handleSearch = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/${searchBrand}`
+        `https://carfullstack.onrender.com/${searchBrand}`
       );
       const data = await response.json();
       setCars(data);
