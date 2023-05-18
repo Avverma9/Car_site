@@ -19,10 +19,14 @@ const SignIn = () => {
         },
         body: JSON.stringify({ email, password })
       });
-
+  
       if (response.ok) {
-        console.log('Sign in successful');
-        navigate('/sell'); // Redirect to the "sell" path
+        const data = await response.json();
+        const { userId } = data;
+  
+        localStorage.setItem('isSignedIn', 'true');
+        localStorage.setItem('userId', userId);
+        navigate('/profile'); // Redirect to the profile page
       } else {
         console.log('Sign in failed');
       }
@@ -30,6 +34,7 @@ const SignIn = () => {
       console.log('Error:', error);
     }
   };
+  
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);

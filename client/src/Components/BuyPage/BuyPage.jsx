@@ -4,10 +4,11 @@ import { BsSearch } from "react-icons/bs";
 
 const Buypage = () => {
   const [cars, setCars] = useState([]);
+  const [searchBrand, setSearchBrand] = useState("");
 
   const fetchCars = async () => {
     try {
-      const response = await fetch("https://cardata-d6kq.onrender.com/getall");
+      const response = await fetch("http://localhost:5000/getall");
       const data = await response.json();
       setCars(data);
     } catch (error) {
@@ -17,6 +18,22 @@ const Buypage = () => {
 
   const handleClick = () => {
     fetchCars();
+  };
+
+  const handleSearch = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:5000/${searchBrand}`
+      );
+      const data = await response.json();
+      setCars(data);
+    } catch (error) {
+      console.error("Error searching for cars:", error);
+    }
+  };
+
+  const handleChange = (e) => {
+    setSearchBrand(e.target.value);
   };
 
   return (
@@ -34,8 +51,10 @@ const Buypage = () => {
           type="text"
           placeholder="Search Your favourite Brand"
           className="search-input-buy"
+          value={searchBrand}
+          onChange={handleChange}
         />
-        <button className="search-button-buy">
+        <button className="search-button-buy" onClick={handleSearch}>
           <BsSearch /> Search
         </button>
       </div>
@@ -49,12 +68,17 @@ const Buypage = () => {
           <div key={car.id} className="car-card">
             <img src={car.images} alt={car.model} className="car-image" />
             <div className="car-details">
-              <h4>{car.model}</h4>
-              <p>Year: {car.year}</p>
-              <p>Body Type: {car.bodytype}</p>
-              <p>Fuel Type: {car.fueltype}</p>
-              <p>Price: {car.price}</p>
-              <p>Mileage: {car.mileage}</p>
+              <h4 className="car-model">{car.model}</h4>
+              <div className="car-info">
+                <p className="car-info-item">Year: {car.year}</p>
+                <p className="car-info-item">Body Type: {car.bodytype}</p>
+                <p className="car-info-item">Fuel Type: {car.fueltype}</p>
+                <p className="car-info-item">Price: {car.price}</p>
+                <p className="car-info-item">Mileage: {car.mileage}</p>
+              </div>
+              <div className="buy-button">
+                <a href="/cart">Buy this car</a>
+              </div>
             </div>
           </div>
         ))}

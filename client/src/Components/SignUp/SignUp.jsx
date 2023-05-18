@@ -56,7 +56,7 @@ const SignUp = () => {
   return (
     <div className="card-signup">
        <div className="logo-wrapper-signup">
-        <img src="https://www.animatedimages.org/data/media/67/animated-car-image-0124.gif" alt="Logo" className="logo-signup" />
+        <img src="https://media3.giphy.com/media/OYJVvzCFOGLWeD32LH/200w.gif?cid=6c09b952ndjizxkyzfy933f32vdt2eqz1fyok8l7m1c3rpzx&ep=v1_gifs_search&rid=200w.gif&ct=s" alt="Logo" className="logo-signup" />
       </div>
       <form onSubmit={handleFormSubmit}>
         <input

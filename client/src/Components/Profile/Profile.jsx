@@ -1,46 +1,73 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Profile.css';
-import {FaRegAddressBook} from 'react-icons/fa'
+import { BsPencilSquare } from 'react-icons/bs'; // Import the update icon from react-icons
 
 const Profile = () => {
-  const name = "Ankit Kumar Verma";
-  const address = "Patna, Bihar";
-  const email = "Av95766@gmail.com";
-  const mobile = "+91 9576630507";
-  const password = "********";
-  const dob = "August 20th, 1999";
-  const profileImage = "https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/1684158922837-147285802_1552126588295847_4530115828836707325_n.jpg"; // Replace with your actual profile image URL
+  const [userData, setUserData] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if the user is signed in (you can implement your own logic here)
+    const isSignedIn = localStorage.getItem('isSignedIn');
+    if (!isSignedIn) {
+      navigate('/signin'); // Redirect to the sign-in page if not signed in
+    } else {
+      // Fetch user data from the server
+      const userId = localStorage.getItem('userId');
+      fetch(`http://localhost:5000/get/${userId}`)
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error('Failed to fetch user data');
+          }
+        })
+        .then(data => {
+          setUserData(data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+  }, []);
+
+  const handleSignOut = () => {
+    // Clear user data and sign out
+    localStorage.removeItem('isSignedIn');
+    localStorage.removeItem('userId');
+    navigate('/signin'); // Redirect to the sign-in page
+  };
 
   return (
-    <div className="card-profile">
-      <div className="profile-image">
-        <img src={profileImage} alt="Profile" />
-      </div>
-      <div className="profile-details">
-        <h2>{name}</h2>
-        <div className="detail-row">
-          <span className="detail-label" ><FaRegAddressBook/>  Address:</span>
-          <span className="detail-value">{address}</span>
+    <div className="profile-container">
+      <h1 className='profile-heading'>Profile</h1>
+      {userData ? (
+        <div className="profile-info">
+          <div className="profile-images">
+           
+            <div className="profile-actions">
+              <BsPencilSquare size={24} />
+            </div>
+          </div>
+          <p><span className="data-label">Name:</span> {userData.name}</p>
+          <p><span className="data-label">Address:</span> {userData.address}</p>
+          <p><span className="data-label">Email:</span> {userData.email}</p>
+          <p><span className="data-label">Mobile:</span> {userData.mobile}</p>
+          {userData.images && userData.images.length > 0 ? (
+            <div className="images-container">
+               {userData.images.map((image, index) => (
+                <img key={index} src={image} alt={`Image ${index}`} className="user-image" />
+              ))}
+            </div>
+          ) : null}
+          <button onClick={handleSignOut} className="sign-out-button">Sign Out</button>
         </div>
-        <div className="detail-row">
-          <span className="detail-label">Email:</span>
-          <span className="detail-value">{email}</span>
-        </div>
-        <div className="detail-row">
-          <span className="detail-label"> Mobile:</span>
-          <span className="detail-value">{mobile}</span>
-        </div>
-        <div className="detail-row">
-          <span className="detail-label">Password:</span>
-          <span className="detail-value">{password}</span>
-        </div>
-        <div className="detail-row">
-          <span className="detail-label">Date of Birth:</span>
-          <span className="detail-value">{dob}</span>
-        </div>
-      </div>
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
-}
+};
 
 export default Profile;
