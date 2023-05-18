@@ -9,8 +9,9 @@ import Footer from './Components/Footer/Footer';
 import CarHomepage from './Components/CarHomepage/CarHomepage.jsx'
 import Buypage from './Components/BuyPage/BuyPage';
 import Auction from './Components/Auction/Auction';
-import CarCatalog from './Components/homeCarPage/CarCatalog';
+
 import Profile from './Components/Profile/Profile';
+import Cart from './Components/Cart/Cart';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Route path='/buy' Component={Buypage}/>
       <Route path='/auction' Component={Auction}/>
       <Route path='/profile'  Component={Profile}/>
+      <Route path='/cart'  Component={Cart}/>
    </Routes>
    </Router>
   );
