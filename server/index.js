@@ -131,7 +131,7 @@ app.post('/sell', upload, async (req, res) => {
   res.json(user);
 });
 //==============================================GET CAR BY MODEL==============================================//
-app.get('/:model', async (req, res) => {
+app.get('/get/:model', async (req, res) => {
   const {model} = req.params
 
   try {
@@ -151,6 +151,7 @@ app.get('/getall', async (req, res) => {
   const records = await cars.find();
   res.json(records);
 });
+//=======================================Create car cart=================================================//
 
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
