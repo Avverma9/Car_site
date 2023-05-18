@@ -7,6 +7,7 @@ const { Server } = require('socket.io');
 const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 const multerS3 = require('multer-s3');
 const multer = require('multer');
+
 const app = express();
 const server = createServer(app);
 const io = new Server(server);
@@ -67,8 +68,7 @@ app.post('/signup', upload, async (req, res) => {
   const user = new signUp({ name,address, email, mobile, password,images});
   await user.save();
   io.emit('recordAdded', user);
- 
- 
+  res.json(user);
 });
 
 app.get('/get', async (req, res) => {
@@ -78,15 +78,14 @@ app.get('/get', async (req, res) => {
 
 app.post('/signin', async (req, res) => {
   const { email, password } = req.body;
-
+  
   try {
     // Find the user in the database
     const user = await signUp.findOne({ email });
 
     // Check if user exists and compare passwords
     if (user && user.password === password) {
-      res.status(200).json({message : "Sign-In Success", id: user._id})
-
+      res.json({ message: 'Sign-in successful' });
     } else {
       res.status(401).json({ message: 'Invalid email or password' });
     }
@@ -95,19 +94,7 @@ app.post('/signin', async (req, res) => {
   }
 });
 
-app.get('/profile/:id', async (req, res) => {
-  try {
-    const data=req.params.id
-    const user = await signUp.findById(data);
-    res.json(user);
-  } catch (error) {
-    res.status(500).json({ message: 'Internal server error' });
-  }
-});
+
+
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-//=====================================Car===============================================
-
-
-
