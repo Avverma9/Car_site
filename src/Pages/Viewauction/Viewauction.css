@@ -1,0 +1,107 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+.image-gallery-fullscreen-button,
+.image-gallery-play-button {
+  display: none;
+}
+
+.image-gallery-play-button {
+  display: none;
+}
+
+.image-gallery-slide .image-gallery-image {
+  max-height: 55vh !important;
+  width: 100%;
+  object-fit: cover !important;
+}
+
+.image-gallery-left-nav .image-gallery-svg,
+.image-gallery-right-nav .image-gallery-svg {
+  height: 60px !important;
+  width: 60px !important;
+}
+
+.image-btn-container {
+  width: 215px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 25px;
+  right: 120px;
+}
+
+.image-btn-container button {
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.addauction-new-form-section label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.auction-detail {
+  display: flex;
+  flex-direction: column;
+}
+.dropdown-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+}
+.select-option {
+  width: 170px;
+  height: 40px;
+  padding: 5px;
+}
+.addauction-new-form-section label input {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.addauction-new {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.addauction-new-form-section {
+  width: 30%;
+}
+
+.addauction-preview {
+  width: 100%;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-label {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid rgb(112, 111, 111);
+}
+.add-photo-text {
+  font-size: 16px;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.add-video-butt {
+  border: none;
+  background: white;
+  color: rgb(78, 78, 78);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
