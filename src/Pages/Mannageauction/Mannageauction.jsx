@@ -154,13 +154,13 @@ export const MannageAuction = () => {
       fetchAuctions();
     }
   }, [filterView, selectedRegion, selectedSeller, selectedCategory]);
-  //=============================================filter by region=======================================//
-  // useEffect(() => {
-  //   fetch(
-  //     "http://13.48.45.18:4008/admin/seller/getByRegion/64d5b3a32dab69ddd864e3be"
-  //   );
-  // }, []);
-  //===================================================================================================//
+
+  useEffect(() => {
+    fetch(
+      "http://13.48.45.18:4008/admin/seller/getByRegion/64d5b3a32dab69ddd864e3be"
+    );
+  }, []);
+
   const handleClick = () => {
     if (
       filterView === true &&
@@ -406,23 +406,23 @@ export const MannageAuction = () => {
               <div>
                 <div className="_flex_center_between">
                   <div className="filter-auction-checkbox _flex_center_between">
-                    <input type="checkbox" id="filter1" name="filter1"></input>
+                    <input type="checkbox" id="filter1" value="runningAuction" name="filter1"></input>
                     <label for="filter1">Running Auction</label>
                   </div>
                   <div className="filter-auction-checkbox _flex_center_between">
-                    <input type="checkbox" id="filter2" name="filter2"></input>
+                    <input type="checkbox" id="filter2" value="awaitingStatusDeclaration" name="filter2"></input>
                     <label for="filter2">Awaiting Status Declaration</label>
                   </div>
                   <div className="filter-auction-checkbox _flex_center_between">
-                    <input type="checkbox" id="filter3" name="filter3"></input>
+                    <input type="checkbox" id="filter3" value="awaitingPaymentApproval" name="filter3"></input>
                     <label for="filter3">Awaiting Payment Approval</label>
                   </div>
                   <div className="filter-auction-checkbox _flex_center_between">
-                    <input type="checkbox" id="filter4" name="filter4"></input>
+                    <input type="checkbox" id="filter4" value="expired" name="filter4"></input>
                     <label for="filter4">Expired</label>
                   </div>
                   <div className="filter-auction-checkbox _flex_center_between">
-                    <input type="checkbox" id="filter4" name="filter4"></input>
+                    <input type="checkbox" id="filter4" value="completed" name="filter4"></input>
                     <label for="filter4">Complete</label>
                   </div>
                 </div>
