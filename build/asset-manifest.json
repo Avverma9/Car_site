@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cbc6614e.css",
+    "main.js": "/static/js/main.1abaae88.js",
+    "static/media/bgimage.jpg": "/static/media/bgimage.9f0819da84207431493c.jpg",
+    "static/media/_mannage-buyer-icon.png": "/static/media/_mannage-buyer-icon.06dd6490a0d97abb5e87.png",
+    "static/media/_profile-icon.png": "/static/media/_profile-icon.557587208eb9e232f2ca.png",
+    "static/media/_mannageAdmin.png": "/static/media/_mannageAdmin.b7f769de578c37e9f845.png",
+    "static/media/_settings-icon.png": "/static/media/_settings-icon.fd9cb79a2028b66f67eb.png",
+    "static/media/_notification-icon.png": "/static/media/_notification-icon.79872f3c8a9af713fabf.png",
+    "static/media/_diesel-icon.png": "/static/media/_diesel-icon.9575c53935531ec46a0e.png",
+    "static/media/_filter-icon.png": "/static/media/_filter-icon.4546628c1cfb552515eb.png",
+    "index.html": "/index.html",
+    "main.cbc6614e.css.map": "/static/css/main.cbc6614e.css.map",
+    "main.1abaae88.js.map": "/static/js/main.1abaae88.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cbc6614e.css",
+    "static/js/main.1abaae88.js"
+  ]
+}
